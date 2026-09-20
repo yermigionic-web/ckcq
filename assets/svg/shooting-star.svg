@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 64" role="img" aria-hidden="true">
+  <title>shooting star</title>
+  <path d="M8 48 L78 18" stroke="#F5F5F5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M20 52 L82 22" stroke="#A6FF00" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="96,8 102,22 118,24 106,34 110,50 96,40 82,50 86,34 74,24 90,22" fill="#A6FF00" stroke="#111111" stroke-width="3" stroke-linejoin="round"/>
+</svg>

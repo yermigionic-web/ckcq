@@ -1,0 +1,109 @@
+.completion {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.completion.capture-mode .game-actions,
+.completion.capture-mode .no-capture,
+.capture-mode .home-deco-ufo,
+.capture-mode .home-deco-star,
+.capture-mode .scanlines,
+.capture-mode .board-deco,
+.capture-mode .fav-widget {
+  display: none !important;
+}
+
+.cert-card {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem 0.35rem 1.1rem;
+  background: transparent;
+}
+
+.cert-head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.4rem;
+}
+
+.cert-kicker {
+  background: var(--alien-green);
+  padding: 0.18rem 0.5rem;
+  font-family: var(--font-chrome);
+  letter-spacing: 0.1em;
+  font-size: clamp(0.78rem, 3vw, 1rem);
+}
+
+.cert-category {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  line-height: 1;
+}
+
+.cert-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.2rem;
+  padding: 0.2rem 0 0.4rem;
+  border-top: 1px solid rgba(26, 26, 26, 0.16);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.16);
+}
+
+.cert-stat {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.45rem 0.2rem;
+  text-align: center;
+}
+
+.cert-stat + .cert-stat {
+  box-shadow: inset 1px 0 0 rgba(26, 26, 26, 0.12);
+}
+
+.cert-stat span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--chrome-dark);
+}
+
+.cert-stat strong {
+  font-family: var(--font-chrome);
+  font-size: clamp(0.85rem, 3.4vw, 1.15rem);
+}
+
+.cert-instruction {
+  text-align: center;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.35rem 0.2rem;
+}
+
+.cert-deco {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.cert-deco img {
+  width: 38px;
+}
+
+.cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.completion .bingo-cell {
+  min-height: 5rem;
+  padding: 0.45rem 0.4rem 0.55rem;
+}
+
+.completion .bingo-board[data-size="6"] .bingo-cell {
+  min-height: 5.2rem;
+  padding: 0.35rem 0.28rem 0.45rem;
+}

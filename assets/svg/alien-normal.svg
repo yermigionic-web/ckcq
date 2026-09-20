@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 148" role="img" aria-hidden="true">
+  <title>alien normal</title>
+  <ellipse cx="64" cy="82" rx="46" ry="56" fill="#A6FF00" stroke="#111111" stroke-width="4"/>
+  <ellipse cx="64" cy="28" rx="18" ry="10" fill="#A6FF00" stroke="#111111" stroke-width="4"/>
+  <circle cx="64" cy="16" r="6" fill="#7CFF00" stroke="#111111" stroke-width="3"/>
+  <ellipse cx="46" cy="80" rx="11" ry="20" fill="#111111"/>
+  <ellipse cx="82" cy="80" rx="11" ry="20" fill="#111111"/>
+  <circle cx="49" cy="73" r="3.2" fill="#F8F8F8"/>
+  <circle cx="85" cy="73" r="3.2" fill="#F8F8F8"/>
+  <path d="M52 108 Q64 116 76 108" fill="none" stroke="#111111" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

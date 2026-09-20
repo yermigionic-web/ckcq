@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#A6FF00">
+  <meta name="description" content="CAROL CHARACTER CHAT BINGO — 팬덤 빙고 퀴즈 이벤트">
+  <title>CAROL CHARACTER CHAT BINGO</title>
+  <link rel="icon" href="assets/svg/alien-normal.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css?v=7">
+  <link rel="stylesheet" href="css/variables.css?v=7">
+  <link rel="stylesheet" href="css/global.css?v=7">
+  <link rel="stylesheet" href="css/home.css?v=7">
+  <link rel="stylesheet" href="css/bingo.css?v=7">
+  <link rel="stylesheet" href="css/modal.css?v=7">
+  <link rel="stylesheet" href="css/completion.css?v=7">
+  <link rel="stylesheet" href="css/animations.css?v=7">
+  <link rel="stylesheet" href="css/responsive.css?v=7">
+</head>
+<body>
+  <a class="skip-link" href="#app">본문으로 건너뛰기</a>
+  <div class="scanlines deco" aria-hidden="true"></div>
+  <div id="live-region" class="live-region" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="app" class="site-shell">
+    <section id="view-home" class="view home" aria-label="홈">
+      <div class="home-hero">
+        <img class="home-deco-ufo deco" src="assets/svg/ufo.svg" alt="">
+        <img class="home-deco-star deco" src="assets/svg/star.svg" alt="">
+        <img class="home-deco-pixel deco" src="assets/svg/pixel-star.svg" alt="">
+
+        <div class="brand">
+          <div class="logo-fallback">
+            <span class="logo-fallback-kicker">CAROL</span>
+            <span class="logo-fallback-mid">CHARACTER CHAT</span>
+            <span class="logo-fallback-bingo">BINGO</span>
+          </div>
+          <img data-logo class="brand-logo" src="assets/logo/main-logo.png" alt="CAROL CHARACTER CHAT BINGO" hidden>
+        </div>
+
+        <p class="kicker home-eyebrow">CONNECTING TO EARTH...</p>
+        <h1 class="home-title">WELCOME,<br>EARTHLING!</h1>
+        <p class="home-sub">FANDOM BINGO</p>
+        <p class="home-copy">칸을 눌러 퀴즈를 풀고, 정답을 맞춰야 빙고가 완성됩니다. 같은 칸을 3번 틀리면 SIGNAL LOST가 되어 더 이상 풀 수 없습니다.</p>
+        <p class="home-signal"><span>CHOOSE YOUR SIGNAL</span></p>
+      </div>
+
+      <div class="signal-grid">
+        <img class="home-orbit deco" src="assets/svg/orbit.svg" alt="">
+
+        <a class="signal-card signal-card-all" href="#safety">
+          <span class="card-tape" aria-hidden="true"></span>
+          <span class="card-badge">SAFETY SIGNAL</span>
+          <h2>SAFETY</h2>
+          <p class="card-size">4 × 4</p>
+          <div class="card-meta">
+            <span class="card-chip">16 MISSIONS</span>
+            <span class="card-chip">5 LINES TO UNLOCK</span>
+          </div>
+          <p class="card-note">SAFETY 시그널입니다. 라인 5개를 모으면 이벤트가 열립니다.</p>
+          <span class="btn btn-green card-enter">ENTER SIGNAL</span>
+        </a>
+
+        <a class="signal-card signal-card-15" href="#unsafety">
+          <span class="card-tape" aria-hidden="true"></span>
+          <span class="card-badge">UNSAFETY SIGNAL</span>
+          <h2>UNSAFETY</h2>
+          <p class="card-size">6 × 6</p>
+          <div class="card-meta">
+            <span class="card-chip">36 MISSIONS</span>
+            <span class="card-chip">7 LINES TO UNLOCK</span>
+          </div>
+          <p class="card-note">UNSAFETY 작품 설정이 포함되어 있습니다.</p>
+          <span class="btn btn-black card-enter">ENTER SIGNAL</span>
+        </a>
+      </div>
+
+      <img class="home-alien deco" src="assets/svg/alien-normal.svg" alt="">
+
+      <footer class="home-footer">
+        <p>READY? 두 게임의 진행도는 따로 저장됩니다. 새로고침해도 유지돼요.</p>
+      </footer>
+    </section>
+
+    <section id="view-loading" class="view status-banner" hidden>
+      <img class="loading-alien" src="assets/svg/ufo.svg" alt="">
+      <p class="kicker">PLEASE HOLD</p>
+      <h2 id="loading-copy">CONNECTING TO EARTH...</h2>
+      <p>시그널을 수신하는 중입니다.</p>
+    </section>
+
+    <section id="view-error" class="view status-banner" hidden>
+      <img class="loading-alien" src="assets/svg/alien-error.svg" alt="">
+      <p class="kicker">UH-OH</p>
+      <h2>SIGNAL LOST</h2>
+      <p id="error-detail">데이터를 불러오지 못했습니다.</p>
+      <button class="btn btn-green" id="btn-retry" type="button">RETRY SIGNAL</button>
+    </section>
+
+    <section id="view-bingo" class="view bingo-view" hidden>
+      <a id="fav-widget" class="fav-widget no-capture" hidden href="#" target="_blank" rel="noopener noreferrer" aria-label="MYFAV 구글 폼 열기">
+        <span class="fav-widget-craft" aria-hidden="true">
+          <img src="assets/svg/ufo.svg" alt="">
+          <span class="fav-widget-beam"></span>
+        </span>
+        <span class="fav-widget-tag">#MYFAV</span>
+      </a>
+      <header class="game-header">
+        <div class="game-header-row">
+          <div class="game-signal">
+            <img src="assets/svg/alien-normal.svg" alt="">
+            <h1 id="game-signal-label">SAFETY SIGNAL</h1>
+          </div>
+          <div class="game-stats">
+            <p class="stat-inline"><span>CELLS</span> <strong id="stat-cells">00 / 16</strong></p>
+            <span class="stat-rule" aria-hidden="true"></span>
+            <p class="stat-inline"><span>LINES</span> <strong id="stat-lines">00 / 05</strong></p>
+          </div>
+          <div class="game-actions no-capture">
+            <button class="btn btn-quiet" id="btn-home" type="button" aria-label="RETURN TO MOTHERSHIP">HOME</button>
+            <button class="btn btn-quiet" id="btn-reset" type="button">RESET</button>
+          </div>
+        </div>
+      </header>
+
+      <div id="event-bar" class="event-bar is-locked">
+        <p class="event-line">
+          <strong id="event-title">EVENT LOCKED</strong>
+          <span class="event-sep" aria-hidden="true">·</span>
+          <span id="event-copy">00 / 05 LINES</span>
+        </p>
+        <div class="event-actions no-capture">
+          <button class="btn btn-green" id="btn-cert" type="button" hidden>인증 화면 보기</button>
+          <button class="btn btn-quiet" id="btn-form" type="button" hidden>ENTER EVENT FORM</button>
+        </div>
+      </div>
+
+      <div id="bingo-main" class="board-wrap" tabindex="-1">
+        <img class="board-deco board-deco-star" src="assets/svg/star.svg" alt="">
+        <img class="board-deco board-deco-pixel" src="assets/svg/pixel-star.svg" alt="">
+        <img class="board-deco board-deco-spark" src="assets/svg/sparkle.svg" alt="">
+        <img class="board-deco board-deco-ufo" src="assets/svg/ufo.svg" alt="">
+        <div id="bingo-board" class="bingo-board" data-size="4"></div>
+      </div>
+    </section>
+
+    <section id="view-completion" class="view completion capture-mode" hidden>
+      <article class="cert-card">
+        <div class="cert-head">
+          <div class="brand">
+            <div class="logo-fallback">
+              <span class="logo-fallback-kicker">CAROL</span>
+              <span class="logo-fallback-mid">CHARACTER CHAT</span>
+              <span class="logo-fallback-bingo">BINGO</span>
+            </div>
+            <img data-logo class="brand-logo" src="assets/logo/main-logo.png" alt="CAROL CHARACTER CHAT BINGO" hidden>
+          </div>
+          <p class="cert-kicker">EVENT SIGNAL UNLOCKED ★</p>
+          <h1 class="cert-category" data-cert-category>SAFETY BINGO</h1>
+          <p class="kicker">SCREENSHOT READY ★</p>
+        </div>
+
+        <div class="cert-stats">
+          <div class="cert-stat">
+            <span>CELLS</span>
+            <strong data-cert-cells>00 / 16</strong>
+          </div>
+          <div class="cert-stat">
+            <span>LINES</span>
+            <strong data-cert-lines>0 / 10</strong>
+          </div>
+          <div class="cert-stat">
+            <span>TARGET</span>
+            <strong data-cert-target>5 LINES</strong>
+          </div>
+        </div>
+
+        <div class="cert-deco" aria-hidden="true">
+          <img src="assets/svg/alien-party.svg" alt="">
+          <img src="assets/svg/ufo.svg" alt="">
+          <img src="assets/svg/sparkle.svg" alt="">
+        </div>
+
+        <div data-cert-board class="bingo-board" data-size="4"></div>
+
+        <p class="cert-instruction">이 화면을 캡처한 뒤<br>이벤트 설문에 업로드해 주세요.</p>
+      </article>
+
+      <div class="cert-actions">
+        <button class="btn" data-back-bingo type="button">BACK TO BINGO</button>
+        <button class="btn btn-green" data-enter-form type="button">ENTER EVENT FORM</button>
+        <p data-form-offline hidden>EVENT FORM OFFLINE<br>현재 이벤트 링크가 등록되지 않았습니다.</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="quiz-overlay" class="modal-overlay" hidden>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-heading" tabindex="-1">
+      <div class="modal-bar">
+        <span id="modal-heading">TRANSMIT WINDOW</span>
+        <button class="modal-close" id="quiz-close" type="button" aria-label="닫기">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="complete-panel" hidden>
+          <p class="modal-work" id="complete-work"></p>
+          <p class="modal-mission" id="complete-mission">MISSION COMPLETE ★</p>
+          <p class="modal-statement" id="complete-title"></p>
+          <div class="modal-complete-mark">
+            <img id="complete-mark-img" src="assets/svg/alien-party.svg" alt="">
+            <strong id="complete-mark-title">MISSION COMPLETE ★</strong>
+            <span id="complete-mark-copy">이미 완료된 미션입니다. 정답은 다시 보여주지 않습니다.</span>
+          </div>
+          <button class="btn btn-green" id="complete-close" type="button">CLOSE CHANNEL</button>
+        </div>
+
+        <div id="play-panel">
+          <p class="modal-work" id="modal-work"></p>
+          <p class="modal-mission" id="modal-mission">MISSION 01</p>
+          <p class="modal-statement" id="modal-statement"></p>
+          <p class="modal-question" id="modal-question"></p>
+          <form class="answer-form" id="answer-form">
+            <label class="sr-only" for="answer-input">답변 입력</label>
+            <input class="answer-input" id="answer-input" name="answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="120" required>
+            <button class="btn btn-green" type="submit">TRANSMIT ANSWER</button>
+          </form>
+          <div class="modal-status" id="modal-status" role="status" aria-live="assertive">
+            <img id="modal-status-img" src="assets/svg/alien-normal.svg" alt="">
+            <div>
+              <strong id="modal-status-title"></strong>
+              <span id="modal-status-text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="reset-overlay" class="modal-overlay" hidden>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="reset-title" tabindex="-1">
+      <div class="modal-bar">
+        <span>RESET WINDOW</span>
+        <button class="modal-close" id="btn-cancel-reset-x" type="button" aria-label="닫기">×</button>
+      </div>
+      <div class="modal-body">
+        <h2 id="reset-title">RESET YOUR SIGNAL?</h2>
+        <p class="confirm-copy">현재 빙고 진행 상황이 모두 초기화됩니다.</p>
+        <p class="confirm-copy">이 보드만 리셋되며, 다른 시그널의 기록은 남습니다.</p>
+        <div class="modal-actions">
+          <button class="btn" id="btn-cancel-reset" type="button">CANCEL</button>
+          <button class="btn btn-pink" id="btn-confirm-reset" type="button">RESET SIGNAL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="padding:1rem;font-family:sans-serif;">이 이벤트 사이트는 JavaScript가 필요합니다.</p>
+  </noscript>
+  <script type="module" src="js/app.js?v=7"></script>
+</body>
+</html>

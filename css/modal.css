@@ -1,0 +1,171 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 0.8rem;
+  background: rgba(17, 17, 17, 0.55);
+}
+
+.modal-overlay[hidden] {
+  display: none !important;
+}
+
+.modal-window {
+  position: relative;
+  width: min(100%, 34rem);
+  max-height: min(92vh, 760px);
+  overflow: auto;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 0 18px 50px rgba(17, 17, 17, 0.18);
+}
+
+.modal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem 0.4rem;
+  color: var(--chrome-dark);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+}
+
+.modal-close {
+  width: 2rem;
+  height: 2rem;
+  color: var(--black);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.modal-body {
+  display: grid;
+  gap: 0.8rem;
+  padding: 1.05rem 0.95rem 1.15rem;
+}
+
+.modal-work {
+  justify-self: start;
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  box-shadow: inset 0 -1px 0 var(--alien-green);
+}
+
+.modal-mission {
+  font-family: var(--font-chrome);
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.modal-statement {
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.modal-question {
+  padding: 0.15rem 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.answer-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.answer-input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.65rem 0.15rem;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+  font-size: 16px;
+}
+
+.answer-input:focus {
+  outline: none;
+  border-bottom-color: var(--alien-green);
+  box-shadow: inset 0 -2px 0 var(--alien-green);
+}
+
+.answer-form.is-shake .answer-input {
+  animation: input-shake 0.42s ease;
+}
+
+.modal-status {
+  display: none;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3.2rem;
+  padding: 0.35rem 0;
+}
+
+.modal-status.is-on {
+  display: flex;
+}
+
+.modal-status img {
+  width: 48px;
+  flex: none;
+}
+
+.modal-status strong {
+  display: block;
+  font-family: var(--font-chrome);
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+
+.modal-status.is-ok strong {
+  color: var(--black);
+  background: var(--alien-green);
+  padding: 0 0.25rem;
+}
+
+.modal-status.is-lost strong {
+  background: var(--lost);
+  color: var(--white);
+  padding: 0 0.25rem;
+}
+
+.answer-form.is-locked {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.modal-complete-mark {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding: 0.7rem 0;
+}
+
+.modal-complete-mark img {
+  width: 74px;
+}
+
+#complete-panel.is-lost #complete-mark-title {
+  background: var(--lost);
+  color: var(--white);
+  padding: 0 0.25rem;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.confirm-copy {
+  font-size: 0.95rem;
+}

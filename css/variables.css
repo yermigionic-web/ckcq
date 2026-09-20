@@ -1,0 +1,50 @@
+:root {
+  --alien-green: #A6FF00;
+  --neon-green: #7CFF00;
+  --soft-lime: #DFFF71;
+
+  --hot-pink: #FF4FD8;
+  --electric-blue: #5B8CFF;
+  --purple: #A66BFF;
+
+  --chrome-light: #F5F5F5;
+  --chrome-mid: #BFC2C5;
+  --chrome-dark: #777B80;
+
+  --black: #111111;
+  --dark: #191919;
+  --white: #F8F8F8;
+  --paper: #F1F0EA;
+
+  --success: #A6FF00;
+  --lost: #FF3A4A;
+
+  --font-display: "Black Han Sans", "Arial Black", Impact, "Noto Sans KR", sans-serif;
+  --font-body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: "Share Tech Mono", "Courier New", Courier, monospace;
+  --font-chrome: "Orbitron", "Arial Black", Impact, sans-serif;
+
+  --border: 1px solid var(--black);
+  --border-thick: 2px solid var(--black);
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --shadow-sticker: 6px 8px 0 var(--hot-pink);
+  --shadow-pink: 6px 8px 0 var(--hot-pink);
+  --shadow-green: 4px 6px 0 var(--alien-green);
+
+  --ink: #1a1a1a;
+  --cell: #f7f7f2;
+  --cell-hover: #fbfbf8;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --header-h: 3.25rem;
+  --focus: 3px solid var(--alien-green);
+  --max: 1120px;
+}

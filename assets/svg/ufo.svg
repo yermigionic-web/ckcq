@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" role="img" aria-hidden="true">
+  <title>ufo</title>
+  <ellipse cx="80" cy="38" rx="28" ry="18" fill="#A6FF00" stroke="#111111" stroke-width="3.5"/>
+  <ellipse cx="80" cy="42" rx="12" ry="8" fill="#5B8CFF" stroke="#111111" stroke-width="2.5"/>
+  <ellipse cx="80" cy="58" rx="62" ry="16" fill="#BFC2C5" stroke="#111111" stroke-width="3.5"/>
+  <ellipse cx="80" cy="54" rx="50" ry="8" fill="#F5F5F5"/>
+  <circle cx="48" cy="58" r="4" fill="#A6FF00" stroke="#111111" stroke-width="2"/>
+  <circle cx="80" cy="60" r="4" fill="#FF4FD8" stroke="#111111" stroke-width="2"/>
+  <circle cx="112" cy="58" r="4" fill="#5B8CFF" stroke="#111111" stroke-width="2"/>
+  <path d="M58 72 L50 86" stroke="#A6FF00" stroke-width="3" stroke-linecap="round"/>
+  <path d="M80 74 L80 88" stroke="#A6FF00" stroke-width="3" stroke-linecap="round"/>
+  <path d="M102 72 L110 86" stroke="#A6FF00" stroke-width="3" stroke-linecap="round"/>
+</svg>

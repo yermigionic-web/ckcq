@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-hidden="true">
+  <title>pixel star</title>
+  <rect x="6" y="0" width="4" height="4" fill="#A6FF00"/>
+  <rect x="2" y="4" width="4" height="4" fill="#A6FF00"/>
+  <rect x="10" y="4" width="4" height="4" fill="#A6FF00"/>
+  <rect x="0" y="8" width="16" height="4" fill="#A6FF00"/>
+  <rect x="4" y="12" width="8" height="4" fill="#111111"/>
+  <rect x="6" y="12" width="4" height="4" fill="#A6FF00"/>
+</svg>
